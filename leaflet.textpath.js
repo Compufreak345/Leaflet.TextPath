@@ -21,7 +21,10 @@ var PolylineTextPath = {
     onRemove: function (map) {
         map = map || this._map;
         if (map && this._textNode)
+            try {
             map._pathRoot.removeChild(this._textNode);
+            }
+            catch (ex) {}
         __onRemove.call(this, map);
     },
 
